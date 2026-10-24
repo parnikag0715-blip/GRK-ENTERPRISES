@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Replace YOUR-DOMAIN.example with the final domain before deploying -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://YOUR-DOMAIN.example/</loc></url>
+  <url><loc>https://YOUR-DOMAIN.example/products</loc></url>
+  <url><loc>https://YOUR-DOMAIN.example/about</loc></url>
+  <url><loc>https://YOUR-DOMAIN.example/experience</loc></url>
+  <url><loc>https://YOUR-DOMAIN.example/contact</loc></url>
+</urlset>
