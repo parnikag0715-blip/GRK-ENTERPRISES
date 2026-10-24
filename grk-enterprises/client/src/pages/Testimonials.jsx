@@ -132,7 +132,8 @@ export default function Testimonials() {
       </section>
 
       {/* REVIEWS LIST OR TRANSPARENT EMPTY STATE */}
-      <section className="section wrap">
+      <section className="section">
+        <div className="wrap">
         {reviewCount > 0 ? (
           <>
             <div className="reviews-filter-bar">
@@ -224,6 +225,7 @@ export default function Testimonials() {
             </div>
           </div>
         )}
+        </div>
       </section>
 
       <CtaBand />

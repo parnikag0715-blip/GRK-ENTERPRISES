@@ -51,80 +51,82 @@ export default function Header() {
           </div>
         </div>
 
-        <div className="wrap nav-container">
-          <div className="nav-pill">
-            <Logo />
-
-            <button
-              className="burger"
-              aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
-              aria-expanded={open}
-              onClick={() => setOpen(!open)}
-            >
-              {open ? <X size={24} /> : <Menu size={24} />}
-            </button>
-
-            <nav className={`links ${open ? 'open' : ''}`} aria-label="Main">
-              <NavLink
-                to="/services"
-                className={({ isActive }) => (isActive ? 'active' : '')}
-                onClick={() => setOpen(false)}
-              >
-                Services
-              </NavLink>
-              <NavLink
-                to="/experience"
-                className={({ isActive }) => (isActive ? 'active' : '')}
-                onClick={() => setOpen(false)}
-              >
-                Experience
-              </NavLink>
-              <NavLink
-                to="/testimonials"
-                className={({ isActive }) => (isActive ? 'active' : '')}
-                onClick={() => setOpen(false)}
-              >
-                Testimonials
-              </NavLink>
-              <NavLink
-                to="/about"
-                className={({ isActive }) => (isActive ? 'active' : '')}
-                onClick={() => setOpen(false)}
-              >
-                About Us
-              </NavLink>
+        <div className="nav-container">
+          <div className="wrap">
+            <div className="nav-pill">
+              <Logo />
 
               <button
-                type="button"
-                className="btn btn-navy nav-cta-pill"
-                onClick={() => {
-                  setOpen(false);
-                  setModalOpen(true);
-                }}
+                className="burger"
+                aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
+                aria-expanded={open}
+                onClick={() => setOpen(!open)}
               >
-                Book Service
+                {open ? <X size={24} /> : <Menu size={24} />}
               </button>
 
-              {/* Mobile Drawer Quick Contacts */}
-              <div className="mobile-drawer-contacts">
-                <a
-                  href={telLink(BIZ.phones[0])}
-                  className="btn btn-outline mobile-quick-btn"
+              <nav className={`links ${open ? 'open' : ''}`} aria-label="Main">
+                <NavLink
+                  to="/services"
+                  className={({ isActive }) => (isActive ? 'active' : '')}
                   onClick={() => setOpen(false)}
                 >
-                  <Phone size={16} /> Call {BIZ.phones[0]}
-                </a>
-                <a
-                  href={waLink()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-wa mobile-quick-btn"
+                  Services
+                </NavLink>
+                <NavLink
+                  to="/experience"
+                  className={({ isActive }) => (isActive ? 'active' : '')}
                   onClick={() => setOpen(false)}
                 >
-                  <MessageCircle size={16} /> WhatsApp Us
-                </a>
-              </div>
-            </nav>
+                  Experience
+                </NavLink>
+                <NavLink
+                  to="/testimonials"
+                  className={({ isActive }) => (isActive ? 'active' : '')}
+                  onClick={() => setOpen(false)}
+                >
+                  Testimonials
+                </NavLink>
+                <NavLink
+                  to="/about"
+                  className={({ isActive }) => (isActive ? 'active' : '')}
+                  onClick={() => setOpen(false)}
+                >
+                  About Us
+                </NavLink>
+
+                <button
+                  type="button"
+                  className="btn btn-navy nav-cta-pill"
+                  onClick={() => {
+                    setOpen(false);
+                    setModalOpen(true);
+                  }}
+                >
+                  Book Service
+                </button>
+
+                {/* Mobile Drawer Quick Contacts */}
+                <div className="mobile-drawer-contacts">
+                  <a
+                    href={telLink(BIZ.phones[0])}
+                    className="btn btn-outline mobile-quick-btn"
+                    onClick={() => setOpen(false)}
+                  >
+                    <Phone size={16} /> Call {BIZ.phones[0]}
+                  </a>
+                  <a
+                    href={waLink()}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-wa mobile-quick-btn"
+                    onClick={() => setOpen(false)}
+                  >
+                    <MessageCircle size={16} /> WhatsApp Us
+                  </a>
+                </div>
+              </nav>
+            </div>
           </div>
         </div>
       </header>

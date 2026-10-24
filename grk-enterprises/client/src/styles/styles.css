@@ -589,21 +589,27 @@ a {
 /* ==========================================================================
    STATS STRIP
    ========================================================================== */
+.stats-section {
+  padding: 1.5rem 0 2rem;
+}
+
 .stats-strip {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.2rem;
-  margin-top: 2.5rem;
-  margin-bottom: 2rem;
 }
 
 .stat-card {
   background: #ffffff;
   border: 1px solid var(--line);
   border-radius: var(--r-md);
-  padding: 1.4rem;
+  padding: 1.4rem 1rem;
   text-align: center;
   box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
@@ -616,11 +622,12 @@ a {
 .stat-card strong {
   display: block;
   font-family: 'Bricolage Grotesque', sans-serif;
-  font-size: 2.4rem;
+  font-size: clamp(1.5rem, 5.5vw, 2.4rem);
   font-weight: 800;
   color: var(--aqua);
-  line-height: 1.1;
+  line-height: 1.15;
   margin-bottom: 0.3rem;
+  word-break: break-word;
 }
 
 .stat-card span {
@@ -2081,7 +2088,7 @@ address svg {
 /* REVIEWS MASONRY GRID */
 .reviews-masonry-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
   gap: 1.8rem;
 }
 
@@ -2362,7 +2369,27 @@ input, select, textarea {
 
 @media (max-width: 860px) {
   .wrap {
-    width: min(1200px, 100% - 1.8rem);
+    width: min(1200px, calc(100% - 1.8rem));
+  }
+
+  /* Solid clean header on mobile to prevent scrolling content from showing through gaps */
+  .header {
+    background: #ffffff;
+    box-shadow: 0 2px 14px rgba(10, 37, 64, 0.08);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav-container {
+    padding: 0.5rem 0;
+  }
+
+  .nav-pill {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0.2rem 0;
+    border-radius: 0;
+    width: 100%;
   }
 
   /* Top Bar */
@@ -2556,11 +2583,29 @@ input, select, textarea {
     min-height: 46px;
     justify-content: center;
   }
+
+  .desktop-br {
+    display: none;
+  }
+
+  .ticks-modern li svg,
+  .perk-row svg,
+  .service-features-list li svg,
+  .reviewer-info svg,
+  .timeline-marker svg,
+  .hero-badge svg,
+  .care-icon-badge svg {
+    flex-shrink: 0;
+  }
+
+  .care-card-content {
+    min-width: 0;
+  }
 }
 
 @media (max-width: 640px) {
   .wrap {
-    width: min(1200px, 100% - 1.4rem);
+    width: min(1200px, calc(100% - 1.4rem));
   }
 
   .section {

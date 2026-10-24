@@ -52,47 +52,51 @@ export default function Experience() {
       </section>
 
       {/* KEY STATS BAR */}
-      <section className="section wrap" style={{ paddingTop: '2.5rem', paddingBottom: '2.5rem' }}>
-        <div className="stats-strip" style={{ marginTop: 0 }}>
-          <div className="stat-card">
-            <strong>15+</strong>
-            <span>Years Hands-on Experience</span>
-          </div>
-          <div className="stat-card">
-            <strong>30+</strong>
-            <span>Farmhouse Pools on Weekly Contract</span>
-          </div>
-          <div className="stat-card">
-            <strong>Nizam Club</strong>
-            <span>Institutional Operational Standards</span>
-          </div>
-          <div className="stat-card">
-            <strong>24/7</strong>
-            <span>Emergency Dispatch in Moinabad</span>
+      <section className="section" style={{ paddingTop: '2.5rem', paddingBottom: '2.5rem' }}>
+        <div className="wrap">
+          <div className="stats-strip" style={{ marginTop: 0 }}>
+            <div className="stat-card">
+              <strong>15+</strong>
+              <span>Years Hands-on Experience</span>
+            </div>
+            <div className="stat-card">
+              <strong>30+</strong>
+              <span>Farmhouse Pools on Weekly Contract</span>
+            </div>
+            <div className="stat-card">
+              <strong>Elite</strong>
+              <span>Nizam Club Operational Standards</span>
+            </div>
+            <div className="stat-card">
+              <strong>24/7</strong>
+              <span>Emergency Dispatch in Moinabad</span>
+            </div>
           </div>
         </div>
       </section>
 
       {/* MILESTONE TIMELINE ROADMAP */}
-      <section className="section wrap">
-        <div className="section-header text-center">
-          <span className="section-pill">Our Journey</span>
-          <h2>A Decade &amp; a Half of Dedicated Pool Care</h2>
-          <p className="lead muted">How fifteen years of practical field experience shaped our standards today.</p>
-        </div>
+      <section className="section">
+        <div className="wrap">
+          <div className="section-header text-center">
+            <span className="section-pill">Our Journey</span>
+            <h2>A Decade &amp; a Half of Dedicated Pool Care</h2>
+            <p className="lead muted">How fifteen years of practical field experience shaped our standards today.</p>
+          </div>
 
-        <div className="timeline-container">
-          {MILESTONES.map((m, idx) => (
-            <div className="timeline-item" key={idx}>
-              <div className="timeline-marker">
-                <span className="timeline-year">{m.year}</span>
+          <div className="timeline-container">
+            {MILESTONES.map((m, idx) => (
+              <div className="timeline-item" key={idx}>
+                <div className="timeline-marker">
+                  <span className="timeline-year">{m.year}</span>
+                </div>
+                <div className="timeline-content">
+                  <h3>{m.title}</h3>
+                  <p>{m.desc}</p>
+                </div>
               </div>
-              <div className="timeline-content">
-                <h3>{m.title}</h3>
-                <p>{m.desc}</p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
@@ -142,21 +146,23 @@ export default function Experience() {
       </section>
 
       {/* OUR 4-STEP TECHNICAL QUALITY STANDARD */}
-      <section className="section wrap">
-        <div className="section-header text-center">
-          <span className="section-pill">Our Methodology</span>
-          <h2>The 4-Step Technical Protocol</h2>
-          <p className="lead muted">The exact diagnostic and maintenance routine applied to every swimming pool.</p>
-        </div>
+      <section className="section">
+        <div className="wrap">
+          <div className="section-header text-center">
+            <span className="section-pill">Our Methodology</span>
+            <h2>The 4-Step Technical Protocol</h2>
+            <p className="lead muted">The exact diagnostic and maintenance routine applied to every swimming pool.</p>
+          </div>
 
-        <div className="protocol-grid">
-          {TECHNICAL_PROCESS.map((p) => (
-            <div className="protocol-card" key={p.step}>
-              <div className="protocol-step-num">{p.step}</div>
-              <h3>{p.title}</h3>
-              <p>{p.desc}</p>
-            </div>
-          ))}
+          <div className="protocol-grid">
+            {TECHNICAL_PROCESS.map((p) => (
+              <div className="protocol-card" key={p.step}>
+                <div className="protocol-step-num">{p.step}</div>
+                <h3>{p.title}</h3>
+                <p>{p.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

@@ -55,68 +55,70 @@ export default function Services() {
       </section>
 
       {/* SERVICES DETAILED LIST */}
-      <section className="section wrap">
-        <div className="services-detailed-stack">
-          {SERVICES_DETAILS.map((srv, idx) => {
-            const IconComp = srv.icon;
-            const isReversed = idx % 2 === 1;
-            return (
-              <article
-                className={`service-detailed-row ${isReversed ? 'row-reversed' : ''}`}
-                key={srv.id}
-                id={srv.id}
-              >
-                <div className="service-media-side">
-                  <div className="service-img-container">
-                    <img src={srv.image} alt={srv.title} loading="lazy" />
-                    <span className="service-floating-badge">{srv.badge}</span>
-                  </div>
-                </div>
-
-                <div className="service-text-side">
-                  <div className="service-badge-row">
-                    <div className="service-icon-square">
-                      <IconComp size={24} />
+      <section className="section">
+        <div className="wrap">
+          <div className="services-detailed-stack">
+            {SERVICES_DETAILS.map((srv, idx) => {
+              const IconComp = srv.icon;
+              const isReversed = idx % 2 === 1;
+              return (
+                <article
+                  className={`service-detailed-row ${isReversed ? 'row-reversed' : ''}`}
+                  key={srv.id}
+                  id={srv.id}
+                >
+                  <div className="service-media-side">
+                    <div className="service-img-container">
+                      <img src={srv.image} alt={srv.title} loading="lazy" />
+                      <span className="service-floating-badge">{srv.badge}</span>
                     </div>
-                    <span className="service-tagline-text">{srv.tagline}</span>
                   </div>
 
-                  <h2>{srv.title}</h2>
-                  <p className="service-overview">{srv.overview}</p>
+                  <div className="service-text-side">
+                    <div className="service-badge-row">
+                      <div className="service-icon-square">
+                        <IconComp size={24} />
+                      </div>
+                      <span className="service-tagline-text">{srv.tagline}</span>
+                    </div>
 
-                  <div className="service-features-card">
-                    <h4>What’s Included:</h4>
-                    <ul className="service-features-list">
-                      {srv.features.map((feat, i) => (
-                        <li key={i}>
-                          <CheckCircle2 size={18} className="text-aqua" />
-                          <span>{feat}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                    <h2>{srv.title}</h2>
+                    <p className="service-overview">{srv.overview}</p>
 
-                  <div className="service-cta-row">
-                    <button
-                      type="button"
-                      className="btn btn-primary"
-                      onClick={() => openBooking(srv.title)}
-                    >
-                      Book This Service <ArrowRight size={16} />
-                    </button>
-                    <a
-                      className="btn btn-wa"
-                      href={serviceWa(srv.title)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <MessageCircle size={18} /> WhatsApp Enquiry
-                    </a>
+                    <div className="service-features-card">
+                      <h4>What’s Included:</h4>
+                      <ul className="service-features-list">
+                        {srv.features.map((feat, i) => (
+                          <li key={i}>
+                            <CheckCircle2 size={18} className="text-aqua" />
+                            <span>{feat}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="service-cta-row">
+                      <button
+                        type="button"
+                        className="btn btn-primary"
+                        onClick={() => openBooking(srv.title)}
+                      >
+                        Book This Service <ArrowRight size={16} />
+                      </button>
+                      <a
+                        className="btn btn-wa"
+                        href={serviceWa(srv.title)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <MessageCircle size={18} /> WhatsApp Enquiry
+                      </a>
+                    </div>
                   </div>
-                </div>
-              </article>
-            );
-          })}
+                </article>
+              );
+            })}
+          </div>
         </div>
       </section>
 

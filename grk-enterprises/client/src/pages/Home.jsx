@@ -79,7 +79,7 @@ export default function Home() {
               <Sparkles size={16} /> 15+ Years Pool Care Excellence in Moinabad &amp; Hyderabad
             </span>
             <h1 className="hero-title">
-              Crystal Clear Pools,<br />Hassle-Free Maintenance
+              Crystal Clear Pools,<br className="desktop-br" /> Hassle-Free Maintenance
             </h1>
             <p className="hero-subtitle">
               Professional pool cleaning, maintenance, chemical balancing, and repair services to keep your pool safe, clean, and ready to enjoy.
@@ -134,22 +134,26 @@ export default function Home() {
       </section>
 
       {/* STATS STRIP */}
-      <section className="stats-strip wrap" aria-label="Key highlights">
-        <div className="stat-card">
-          <strong>15+</strong>
-          <span>Years of Industry Experience</span>
-        </div>
-        <div className="stat-card">
-          <strong>30+</strong>
-          <span>Farmhouse Pools Maintained</span>
-        </div>
-        <div className="stat-card">
-          <strong>100%</strong>
-          <span>Free First-Client Consultation</span>
-        </div>
-        <div className="stat-card">
-          <strong>Same Day</strong>
-          <span>Emergency Dispatch in Moinabad</span>
+      <section className="stats-section" aria-label="Key highlights">
+        <div className="wrap">
+          <div className="stats-strip">
+            <div className="stat-card">
+              <strong>15+</strong>
+              <span>Years of Industry Experience</span>
+            </div>
+            <div className="stat-card">
+              <strong>30+</strong>
+              <span>Farmhouse Pools Maintained</span>
+            </div>
+            <div className="stat-card">
+              <strong>100%</strong>
+              <span>Free First-Client Consultation</span>
+            </div>
+            <div className="stat-card">
+              <strong>Fast</strong>
+              <span>Same-Day Emergency Dispatch</span>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -261,66 +265,68 @@ export default function Home() {
       </section>
 
       {/* FEATURED SERVICE PACKAGES */}
-      <section className="section wrap" id="packages">
-        <div className="section-header text-center">
-          <span className="section-pill">Service Plans</span>
-          <h2>Popular Pool Care Packages</h2>
-          <p className="lead muted">
-            Flexible service packages crafted for weekend farmhouses, residential villas, and commercial clubs.
-          </p>
-        </div>
+      <section className="section" id="packages">
+        <div className="wrap">
+          <div className="section-header text-center">
+            <span className="section-pill">Service Plans</span>
+            <h2>Popular Pool Care Packages</h2>
+            <p className="lead muted">
+              Flexible service packages crafted for weekend farmhouses, residential villas, and commercial clubs.
+            </p>
+          </div>
 
-        <div className="supplies-grid">
-          {SERVICES_DETAILS.slice(0, 3).map((srv) => (
-            <article className="supply-card" key={srv.id}>
-              <div className="supply-img-wrap">
-                <img src={srv.image} alt={srv.title} />
-                <div className="supply-overlay">
-                  <span className="supply-pill">{srv.badge}</span>
+          <div className="supplies-grid">
+            {SERVICES_DETAILS.slice(0, 3).map((srv) => (
+              <article className="supply-card" key={srv.id}>
+                <div className="supply-img-wrap">
+                  <img src={srv.image} alt={srv.title} />
+                  <div className="supply-overlay">
+                    <span className="supply-pill">{srv.badge}</span>
+                  </div>
                 </div>
-              </div>
-              <div className="supply-body">
-                <div className="supply-title-row">
-                  <srv.icon size={24} className="text-aqua" />
-                  <h3>{srv.title}</h3>
-                </div>
-                <p className="muted">{srv.overview}</p>
+                <div className="supply-body">
+                  <div className="supply-title-row">
+                    <srv.icon size={24} className="text-aqua" />
+                    <h3>{srv.title}</h3>
+                  </div>
+                  <p className="muted">{srv.overview}</p>
 
-                <div className="supply-items-preview">
-                  {srv.features.slice(0, 3).map((feat, i) => (
-                    <span className="item-tag" key={i}>
-                      ✓ {feat}
-                    </span>
-                  ))}
-                </div>
+                  <div className="supply-items-preview">
+                    {srv.features.slice(0, 3).map((feat, i) => (
+                      <span className="item-tag" key={i}>
+                        ✓ {feat}
+                      </span>
+                    ))}
+                  </div>
 
-                <div className="supply-actions">
-                  <button
-                    type="button"
-                    className="btn btn-primary"
-                    onClick={() => openBooking(srv.title)}
-                  >
-                    Book Now <ArrowRight size={16} />
-                  </button>
-                  <a
-                    className="btn btn-wa-icon"
-                    href={serviceWa(srv.title)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="Enquire on WhatsApp"
-                  >
-                    <MessageCircle size={18} />
-                  </a>
+                  <div className="supply-actions">
+                    <button
+                      type="button"
+                      className="btn btn-primary"
+                      onClick={() => openBooking(srv.title)}
+                    >
+                      Book Now <ArrowRight size={16} />
+                    </button>
+                    <a
+                      className="btn btn-wa-icon"
+                      href={serviceWa(srv.title)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Enquire on WhatsApp"
+                    >
+                      <MessageCircle size={18} />
+                    </a>
+                  </div>
                 </div>
-              </div>
-            </article>
-          ))}
-        </div>
+              </article>
+            ))}
+          </div>
 
-        <div className="text-center" style={{ marginTop: '2.5rem' }}>
-          <Link to="/services" className="btn btn-outline">
-            View All Services &amp; Maintenance Details <ArrowRight size={16} />
-          </Link>
+          <div className="text-center" style={{ marginTop: '2.5rem' }}>
+            <Link to="/services" className="btn btn-outline">
+              View All Services &amp; Maintenance Details <ArrowRight size={16} />
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -407,66 +413,68 @@ export default function Home() {
       </section>
 
       {/* TESTIMONIALS SECTION */}
-      <section className="section wrap" id="testimonials">
-        <div className="section-header text-center">
-          <span className="section-pill">Customer Feedback</span>
-          <h2>Honest Reviews from Real Pool Owners</h2>
-          <p className="lead muted">
-            We believe in honest service with zero fabricated reviews. Read what our clients have to say or share your own experience.
-          </p>
-        </div>
+      <section className="section" id="testimonials">
+        <div className="wrap">
+          <div className="section-header text-center">
+            <span className="section-pill">Customer Feedback</span>
+            <h2>Honest Reviews from Real Pool Owners</h2>
+            <p className="lead muted">
+              We believe in honest service with zero fabricated reviews. Read what our clients have to say or share your own experience.
+            </p>
+          </div>
 
-        {customerReviews.length > 0 ? (
-          <div className="testimonials-grid">
-            {customerReviews.slice(0, 3).map((t) => (
-              <div className="testimonial-card" key={t.id}>
-                <div className="rating-stars">
-                  {[...Array(Number(t.rating) || 5)].map((_, i) => (
-                    <Star key={i} size={18} fill="#f59e0b" color="#f59e0b" />
-                  ))}
-                </div>
-                <p className="testimonial-comment">"{t.comment}"</p>
-                <div className="testimonial-author">
-                  <div className="author-avatar">{t.name.charAt(0)}</div>
-                  <div>
-                    <strong>{t.name}</strong>
-                    <span className="author-role">{t.location}</span>
+          {customerReviews.length > 0 ? (
+            <div className="testimonials-grid">
+              {customerReviews.slice(0, 3).map((t) => (
+                <div className="testimonial-card" key={t.id}>
+                  <div className="rating-stars">
+                    {[...Array(Number(t.rating) || 5)].map((_, i) => (
+                      <Star key={i} size={18} fill="#f59e0b" color="#f59e0b" />
+                    ))}
+                  </div>
+                  <p className="testimonial-comment">"{t.comment}"</p>
+                  <div className="testimonial-author">
+                    <div className="author-avatar">{t.name.charAt(0)}</div>
+                    <div>
+                      <strong>{t.name}</strong>
+                      <span className="author-role">{t.location}</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <div className="empty-reviews-card text-center" style={{ margin: '0 auto', maxWidth: '640px' }}>
-            <div className="empty-icon-circle">
-              <MessageSquareHeart size={38} className="text-aqua" />
+              ))}
             </div>
-            <h3>Have We Maintained Your Swimming Pool?</h3>
-            <p className="muted" style={{ margin: '0.5rem 0 1.6rem' }}>
-              We do not post fake reviews. If our technicians have serviced your pool in Moinabad, Gandipet, or Hyderabad, please share your genuine feedback!
-            </p>
-            <div className="btns" style={{ justifyContent: 'center' }}>
-              <button
-                type="button"
-                className="btn btn-primary"
-                onClick={() => setReviewModalOpen(true)}
-              >
-                <PlusCircle size={18} /> Write a Review
-              </button>
+          ) : (
+            <div className="empty-reviews-card text-center" style={{ margin: '0 auto', maxWidth: '640px' }}>
+              <div className="empty-icon-circle">
+                <MessageSquareHeart size={38} className="text-aqua" />
+              </div>
+              <h3>Have We Maintained Your Swimming Pool?</h3>
+              <p className="muted" style={{ margin: '0.5rem 0 1.6rem' }}>
+                We do not post fake reviews. If our technicians have serviced your pool in Moinabad, Gandipet, or Hyderabad, please share your genuine feedback!
+              </p>
+              <div className="btns" style={{ justifyContent: 'center' }}>
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  onClick={() => setReviewModalOpen(true)}
+                >
+                  <PlusCircle size={18} /> Write a Review
+                </button>
+                <Link to="/testimonials" className="btn btn-outline">
+                  View Reviews Page
+                </Link>
+              </div>
+            </div>
+          )}
+
+          {customerReviews.length > 0 && (
+            <div className="text-center" style={{ marginTop: '2rem' }}>
               <Link to="/testimonials" className="btn btn-outline">
-                View Reviews Page
+                View All Reviews &amp; Submit Yours <ArrowRight size={16} />
               </Link>
             </div>
-          </div>
-        )}
-
-        {customerReviews.length > 0 && (
-          <div className="text-center" style={{ marginTop: '2rem' }}>
-            <Link to="/testimonials" className="btn btn-outline">
-              View All Reviews &amp; Submit Yours <ArrowRight size={16} />
-            </Link>
-          </div>
-        )}
+          )}
+        </div>
       </section>
 
       {/* QUICK CTA BAND */}
