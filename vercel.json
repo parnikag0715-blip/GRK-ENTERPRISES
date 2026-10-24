@@ -1,0 +1,7 @@
+{
+  "buildCommand": "cd grk-enterprises/client && npm install && npm run build",
+  "outputDirectory": "grk-enterprises/client/dist",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

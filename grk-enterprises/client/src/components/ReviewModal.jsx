@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { X, Star, MessageCircle, Send, CheckCircle2 } from 'lucide-react';
 import { waLink } from '../data/site.js';
 
@@ -13,6 +13,12 @@ export default function ReviewModal({ isOpen, onClose, onReviewAdded }) {
     title: '',
     comment: ''
   });
+
+  useEffect(() => {
+    if (isOpen) {
+      setSubmitted(false);
+    }
+  }, [isOpen]);
 
   if (!isOpen) return null;
 
